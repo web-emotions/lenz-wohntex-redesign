@@ -28,6 +28,13 @@ export const partners = [
     website: '#',
   },
   {
+    name: 'Teba',
+    category: 'Sonnenschutz',
+    description: 'Rollos, Jalousien, Plissees und Faltstore – zuverlässiger Sonnenschutz mit System und Stil.',
+    logo: '/images/Partner/teba_logo8526.gif',
+    website: '#',
+  },
+  {
     name: 'Fertighaus Weiss',
     category: 'Baupartner',
     description: 'Langjähriger Baupartner – wir statten Fertighaus Weiss-Neubauten mit Böden, Gardinen und Sonnenschutz aus.',
