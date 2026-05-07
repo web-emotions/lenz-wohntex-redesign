@@ -1,0 +1,153 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
+import ContactStrip from '../../components/sections/ContactStrip.astro';
+---
+
+<PageLayout
+  title="Gardinen nach Maß Schwäbisch Hall – Stores, Vorhänge & Dekoschals | Lenz Wohntex"
+  description="Gardinen und Vorhänge nach Maß für Ihr Zuhause – große Musterauswahl im Showroom Michelfeld. Beratung, Aufmaß und Montage in Schwäbisch Hall und Umgebung."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: 'Startseite', href: '/' },
+        { label: 'Leistungen', href: '/leistungen/' },
+        { label: 'Gardinen & Vorhänge' },
+      ]} />
+      <span class="page-hero__eyebrow">Leistungen</span>
+      <h1 class="page-hero__title">Gardinen & Vorhänge nach Maß</h1>
+      <p class="page-hero__lead">
+        Gardinen gestalten das Licht, schaffen Privatsphäre und geben einem Raum
+        seinen Charakter. Seit 1986 beraten wir Sie persönlich – vom Muster
+        bis zur fertigen Montage.
+      </p>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:start;">
+        <div>
+          <span class="section__label">Was wir anbieten</span>
+          <h2 class="section__title" style="font-size:clamp(1.5rem,3vw,2rem);">Gardinen in allen Variationen</h2>
+          <p style="color:var(--clr-text-secondary);line-height:1.75;margin-bottom:var(--sp-4);">
+            In unserem Showroom in Michelfeld finden Sie Gardinenmuster in einer großen
+            Auswahl an Stoffen, Farben und Verarbeitungen. Wir helfen Ihnen, das Richtige
+            für Ihr Wohnzimmer, Schlafzimmer, Kinderzimmer oder Büro zu finden.
+          </p>
+          <p style="color:var(--clr-text-secondary);line-height:1.75;">
+            Auf Wunsch kommen wir zu Ihnen nach Hause, nehmen das Aufmaß und beraten Sie
+            direkt am Fenster – so sehen Sie sofort, wie der gewählte Stoff in Ihrem Raum wirkt.
+          </p>
+        </div>
+        <div style="background:var(--clr-bg-alt);border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;">
+          <img
+            src="/images/leistungen/gardinen.jpg"
+            alt="Gardinen nach Maß bei Lenz Wohntex Michelfeld"
+            loading="lazy"
+            width="600"
+            height="450"
+            style="width:100%;height:100%;object-fit:cover;"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produkttypen -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="section__label">Produktauswahl</span>
+      <h2 class="section__title">Welche Gardinen passen zu Ihnen?</h2>
+
+      <div class="grid-features">
+        {[
+          {
+            title: 'Stores',
+            text: 'Stores aus weißen oder transparenten Stoffen mildern das einfallende Tageslicht, ohne den Raum zu verdunkeln. Ideal als Blendschutz mit freiem Blick nach draußen – für helle, luftige Atmosphäre.',
+            tags: ['Transparent', 'Blendschutz', 'Meterware'],
+          },
+          {
+            title: 'Dekoschals',
+            text: 'Dekoschals rahmen das Fenster dekorativ ein – einseitig oder beidseitig aufgehängt, als lange Bahnen bis zum Boden. Sie setzen Akzente und lassen sich mit Stores kombinieren.',
+            tags: ['Raumhohe Bahnen', 'Kombination', 'Wohnlich'],
+          },
+          {
+            title: 'Flächenvorhänge',
+            text: 'Flächenvorhänge auf einer Schienenanlage ermöglichen einen modernen, geradlinigen Look und lassen sich leicht verschieben. Besonders beliebt für große Fensterfronten und als Raumteiler.',
+            tags: ['Modern', 'Schienenanlage', 'Raumteiler'],
+          },
+          {
+            title: 'Raffrollos & Wave',
+            text: 'Raffrollos bieten eine platzsparende, elegante Alternative zu klassischen Vorhängen. Im Wave-System entstehen fließende Falten für ein gleichmäßiges, wohnliches Erscheinungsbild.',
+            tags: ['Platzsparend', 'Faltenwurf', 'Elegant'],
+          },
+        ].map((item) => (
+          <div class="feature-item">
+            <h3 class="feature-item__title">{item.title}</h3>
+            <p class="feature-item__text">{item.text}</p>
+            <div class="feature-item__tags">
+              {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Materialien -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label">Stoffe & Materialien</span>
+      <h2 class="section__title">Was steckt hinter dem Stoff?</h2>
+      <p class="section__lead">
+        Die Materialwahl entscheidet über Optik, Pflege und Lichtverhalten Ihrer Gardine.
+        Wir beraten Sie ehrlich und mit Blick auf Ihre Anforderungen.
+      </p>
+
+      <div class="grid-3">
+        {[
+          { mat: 'Baumwolle', desc: 'Natürlich, luftig und angenehm weich. Leicht zu waschen, neigt zum Einlaufen – ideal für Schlafzimmer und Kinderzimmer.' },
+          { mat: 'Leinen', desc: 'Strukturiertes, natürliches Aussehen mit edlem Charakter. Lichtecht und langlebig – für Wohnräume mit hochwertiger Einrichtung.' },
+          { mat: 'Polyester', desc: 'Pflegeleicht, formstabil und lichtecht. Keine Schrumpfung beim Waschen – praktisch und langlebig für alle Räume.' },
+          { mat: 'Mischgewebe', desc: 'Kombination aus natürlichen und synthetischen Fasern für optimale Eigenschaften: natürliche Optik bei guter Pflegeleichtigkeit.' },
+          { mat: 'Seide & Seidenlook', desc: 'Edler Glanz und weicher Fall für besondere Räume. Empfindlicher in der Pflege, aber unübertroffen in der Wirkung.' },
+          { mat: 'Verdunkelungsstoffe', desc: 'Speziell für Schlafzimmer oder Kinderzimmer: 100 % lichtundurchlässig, auch in dekorativen Farben und Mustern erhältlich.' },
+        ].map((item) => (
+          <div style="padding:var(--sp-5);background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--radius-md);">
+            <h3 style="font-size:var(--text-lg);margin-bottom:var(--sp-2);">{item.mat}</h3>
+            <p style="font-size:var(--text-sm);color:var(--clr-text-secondary);line-height:1.65;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ablauf -->
+  <section class="section section--alt">
+    <div class="container container--narrow">
+      <span class="section__label">So läuft es ab</span>
+      <h2 class="section__title">Von der Idee bis zur Montage</h2>
+      <ol style="display:flex;flex-direction:column;gap:var(--sp-6);margin-top:var(--sp-8);list-style:none;">
+        {[
+          { step: '1', title: 'Beratung im Showroom oder bei Ihnen', text: 'Wir zeigen Ihnen Muster, besprechen Ihre Vorstellungen und geben Empfehlungen passend zu Ihrem Einrichtungsstil.' },
+          { step: '2', title: 'Aufmaß vor Ort', text: 'Wir messen Ihre Fenster exakt aus – der wichtigste Schritt für einen perfekten Sitz und einwandfreie Funktion.' },
+          { step: '3', title: 'Bestellung & Fertigung', text: 'Ihre Gardinen werden nach Maß konfektioniert – Länge, Breite, Falte, Bandart und Aufhängung genau nach Ihren Wünschen.' },
+          { step: '4', title: 'Montage', text: 'Wir kommen zum vereinbarten Termin, montieren alle Vorhangstangen, Schienen und Gardinen – und hinterlassen alles aufgeräumt.' },
+        ].map((s) => (
+          <li style="display:flex;gap:var(--sp-5);align-items:flex-start;">
+            <span style="font-family:var(--font-serif);font-size:var(--text-3xl);font-weight:700;color:var(--clr-accent);opacity:0.5;line-height:1;flex-shrink:0;min-width:2rem;">{s.step}</span>
+            <div>
+              <h3 style="font-size:var(--text-lg);margin-bottom:var(--sp-2);">{s.title}</h3>
+              <p style="color:var(--clr-text-secondary);font-size:var(--text-sm);line-height:1.7;">{s.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <ContactStrip />
+</PageLayout>

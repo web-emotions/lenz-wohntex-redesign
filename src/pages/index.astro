@@ -1,0 +1,64 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import ServicesGrid from '../components/sections/ServicesGrid.astro';
+import WhyUs from '../components/sections/WhyUs.astro';
+import ContactStrip from '../components/sections/ContactStrip.astro';
+---
+
+<PageLayout
+  title="Raumausstatter Schwäbisch Hall – Gardinen, Bodenbeläge & mehr | Lenz Wohntex"
+  description="Ihr Raumausstatter in Michelfeld seit 1985. Gardinen nach Maß, Bodenbeläge, Sonnenschutz und Insektenschutz – persönliche Beratung, Aufmaß und Montage. Jetzt anrufen."
+>
+  <Hero
+    headline="Ihr Raumausstatter in"
+    headlineEm="Schwäbisch Hall."
+    subline="Gardinen nach Maß, Bodenbeläge, Sonnenschutz und Insektenschutz – persönlich beraten, aufgemessen und montiert. Seit 1985 in Michelfeld und der Region."
+    ctaPrimary={{ text: 'Unsere Leistungen', href: '/leistungen/' }}
+    ctaSecondary={{ text: 'Jetzt anrufen', href: 'tel:+4979189805' }}
+    image="/images/hero/startseite.jpg"
+    imageAlt="Showroom Lenz Wohntex in Michelfeld – Gardinen und Bodenbeläge"
+  />
+
+  <ServicesGrid />
+
+  <WhyUs />
+
+  <!-- Referenz-Teaser editorial -->
+  <section class="referenz-teaser">
+    <div class="container">
+      <div class="referenz-teaser__head reveal">
+        <span class="section__label">Einblicke in unsere Arbeit</span>
+        <h2 class="referenz-teaser__title">Referenzprojekte</h2>
+        <p class="referenz-teaser__lead">
+          Von neuen Bodenbelägen bis zur kompletten Raumgestaltung –
+          ein Ausschnitt abgeschlossener Projekte in der Region Schwäbisch Hall.
+        </p>
+      </div>
+    </div>
+
+    <div class="referenz-mosaic reveal">
+      <a href="/referenzen/" class="referenz-mosaic__item referenz-mosaic__item--featured" tabindex="-1" aria-hidden="true">
+        <img src="/images/Referenzen/Vorhang.jpg" alt="Gardinen Referenz" loading="lazy" width="800" height="600" />
+      </a>
+      <a href="/referenzen/" class="referenz-mosaic__item" tabindex="-1" aria-hidden="true">
+        <img src="/images/Referenzen/Flaechenvorhang.jpg" alt="Flächenvorhang" loading="lazy" width="400" height="300" />
+      </a>
+      <a href="/referenzen/" class="referenz-mosaic__item" tabindex="-1" aria-hidden="true">
+        <img src="/images/Referenzen/Floover_Wohnzimmer.jpg" alt="Bodenbelag Wohnzimmer" loading="lazy" width="400" height="300" />
+      </a>
+      <a href="/referenzen/" class="referenz-mosaic__item" tabindex="-1" aria-hidden="true">
+        <img src="/images/Referenzen/Vinyl_Design_4.jpg" alt="Vinyl Bodenbelag" loading="lazy" width="400" height="300" />
+      </a>
+      <a href="/referenzen/" class="referenz-mosaic__item" tabindex="-1" aria-hidden="true">
+        <img src="/images/Referenzen/Vorhang1.jpg" alt="Vorhang Referenz" loading="lazy" width="400" height="300" />
+      </a>
+    </div>
+
+    <div class="container" style="margin-top:2.5rem;text-align:center">
+      <a href="/referenzen/" class="btn btn--primary reveal">Alle Referenzen ansehen</a>
+    </div>
+  </section>
+
+  <ContactStrip />
+</PageLayout>

@@ -1,0 +1,63 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Breadcrumb from '../components/ui/Breadcrumb.astro';
+import ContactStrip from '../components/sections/ContactStrip.astro';
+import { partners } from '../data/partners';
+---
+
+<PageLayout
+  title="Unsere Markenpartner – Gardisette, Wineo, Neher & mehr | Lenz Wohntex"
+  description="Lenz Wohntex setzt auf ausgewählte Qualitätsmarken: Gardisette, Wineo, Weitzer Parkett, Neher Insektenschutz und Teba – für beste Ergebnisse in Ihrem Zuhause."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: 'Startseite', href: '/' },
+        { label: 'Partner' },
+      ]} />
+      <span class="page-hero__eyebrow">Vertrauen durch Qualität</span>
+      <h1 class="page-hero__title">Unsere Partner & Marken</h1>
+      <p class="page-hero__lead">
+        Gute Handwerksarbeit braucht gute Materialien. Wir arbeiten mit ausgewählten
+        Herstellern zusammen, deren Produkte wir kennen, selbst verlegen und
+        deren Qualität wir mit unserem Namen vertreten.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="partner-grid">
+        {partners.map((partner) => (
+          <div class="partner-card">
+            <img
+              src={partner.logo}
+              alt={`${partner.name} Logo`}
+              class="partner-card__logo"
+              loading="lazy"
+              width="130"
+              height="44"
+            />
+            <span class="partner-card__category">{partner.category}</span>
+            <h2 class="partner-card__name">{partner.name}</h2>
+            <p class="partner-card__text">{partner.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div style="margin-top:var(--sp-12);padding:var(--sp-8);background:var(--clr-bg-alt);border-radius:var(--radius-md);border:1px solid var(--clr-border);">
+        <h2 style="font-size:clamp(1.25rem,2.5vw,1.75rem);margin-bottom:var(--sp-4);">
+          Qualität, die wir selbst vertreten
+        </h2>
+        <p style="color:var(--clr-text-secondary);line-height:1.75;max-width:65ch;">
+          Wir führen ausschließlich Produkte, die wir kennen und die wir in unsere
+          eigenen Projekte einsetzen würden. Wenn Sie sich bei uns beraten lassen,
+          zeigen wir Ihnen die Unterschiede ehrlich auf – auch wenn das bedeutet,
+          dass eine einfachere Lösung besser zu Ihrer Situation passt.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ContactStrip />
+</PageLayout>

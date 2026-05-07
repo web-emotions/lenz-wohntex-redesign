@@ -1,0 +1,130 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Breadcrumb from '../components/ui/Breadcrumb.astro';
+import { contact } from '../data/contact';
+---
+
+<PageLayout
+  title="Datenschutzerklärung | Lenz Wohntex Michelfeld"
+  description="Datenschutzerklärung von Lenz Wohntex gemäß DSGVO. Informationen zur Verarbeitung personenbezogener Daten."
+  noindex={true}
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: 'Startseite', href: '/' },
+        { label: 'Datenschutz' },
+      ]} />
+      <h1 class="page-hero__title">Datenschutzerklärung</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="content-area">
+
+        <h2>1. Verantwortlicher</h2>
+        <p>
+          Verantwortlicher im Sinne der Datenschutzgesetze ist:<br />
+          <strong>{contact.company}</strong><br />
+          Inhaber: {contact.owner}<br />
+          {contact.street}<br />
+          {contact.zip} {contact.city}<br />
+          Telefon: {contact.phone}<br />
+          E-Mail: {contact.email}
+        </p>
+
+        <h2>2. Grundsätze der Datenverarbeitung</h2>
+        <p>
+          Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung
+          unserer Dienstleistungen und zur Beantwortung von Anfragen erforderlich ist.
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) bzw.
+          Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
+        </p>
+
+        <h2>3. Websitebesuch & Server-Logfiles</h2>
+        <p>
+          Beim Aufruf unserer Website übermittelt Ihr Browser automatisch folgende Daten
+          an unseren Webserver, die technisch für den Seitenaufruf notwendig sind:
+        </p>
+        <ul>
+          <li>IP-Adresse (anonymisiert)</li>
+          <li>Datum und Uhrzeit des Abrufs</li>
+          <li>Browser-Typ und -Version</li>
+          <li>Aufgerufene Seite</li>
+          <li>HTTP-Statuscode</li>
+        </ul>
+        <p>
+          Diese Daten dienen ausschließlich der technischen Bereitstellung der Website
+          und werden nach 7 Tagen automatisch gelöscht. Eine Weitergabe an Dritte
+          findet nicht statt.
+        </p>
+
+        <h2>4. Kontaktformular & E-Mail</h2>
+        <p>
+          Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, speichern
+          wir die übermittelten Daten (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung
+          Ihrer Anfrage. Die Daten werden nicht an Dritte weitergegeben und nach Abschluss
+          des Vorgangs gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.
+        </p>
+        <p>
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen)
+          bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung
+          von Anfragen).
+        </p>
+
+        <h2>5. Cookies</h2>
+        <p>
+          Diese Website verwendet ausschließlich technisch notwendige Cookies.
+          Diese Cookies sind erforderlich, damit die Website korrekt funktioniert,
+          und können in Ihrem Browser nicht deaktiviert werden, ohne die Funktion
+          der Website zu beeinträchtigen. Sie enthalten keine personenbezogenen Daten.
+        </p>
+        <p>
+          Wir verwenden keine Analyse-, Marketing- oder Tracking-Cookies.
+        </p>
+
+        <h2>6. Externe Dienste</h2>
+        <p>
+          Diese Website bettet keine Inhalte von sozialen Netzwerken (Facebook, Instagram etc.)
+          ein und verwendet kein Google Analytics oder vergleichbare Tracking-Dienste.
+        </p>
+        <p>
+          <strong>Kontaktformular:</strong> Zur Verarbeitung von Kontaktanfragen kann ein
+          externer Formulardienst (z. B. Formspree) eingesetzt werden. In diesem Fall
+          werden die übermittelten Daten über die Server des Dienstleisters weitergeleitet.
+          Näheres entnehmen Sie der Datenschutzerklärung des jeweiligen Anbieters.
+        </p>
+
+        <h2>7. Ihre Rechte</h2>
+        <p>Sie haben gegenüber uns folgende Rechte:</p>
+        <ul>
+          <li>Recht auf Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+          <li>Recht auf Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+          <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+          <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+          <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+          <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        </ul>
+        <p>
+          Zur Ausübung Ihrer Rechte wenden Sie sich an: {contact.email}
+        </p>
+
+        <h2>8. Beschwerderecht</h2>
+        <p>
+          Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
+          Die zuständige Aufsichtsbehörde für Baden-Württemberg ist der
+          Landesbeauftragte für den Datenschutz und die Informationsfreiheit
+          Baden-Württemberg, Postfach 10 29 32, 70025 Stuttgart.
+        </p>
+
+        <h2>9. Aktualität & Änderungen</h2>
+        <p>
+          Diese Datenschutzerklärung hat den Stand Mai 2025. Wir behalten uns vor,
+          sie bei Änderungen der rechtlichen Lage oder unserer Dienstleistungen anzupassen.
+        </p>
+
+      </div>
+    </div>
+  </section>
+</PageLayout>

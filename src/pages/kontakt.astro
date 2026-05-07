@@ -1,0 +1,178 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Breadcrumb from '../components/ui/Breadcrumb.astro';
+import { contact } from '../data/contact';
+---
+
+<PageLayout
+  title="Kontakt & Öffnungszeiten – Lenz Wohntex Raumausstatter Michelfeld"
+  description="Lenz Wohntex, Stuttgarter Str. 2, 74545 Michelfeld. Mo–Fr 9–18 Uhr, Sa 9–12:30 Uhr. Tel: 0791 / 89805. Beratungstermin vereinbaren oder direkt vorbeikommen."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: 'Startseite', href: '/' },
+        { label: 'Kontakt' },
+      ]} />
+      <span class="page-hero__eyebrow">Sprechen Sie uns an</span>
+      <h1 class="page-hero__title">Kontakt & Anfahrt</h1>
+      <p class="page-hero__lead">
+        Besuchen Sie uns in unserem Showroom in Michelfeld oder rufen Sie einfach an –
+        wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:start;gap:var(--sp-12);">
+
+        <!-- Kontaktdaten + Formular -->
+        <div>
+          <!-- Kontakt-Info -->
+          <div class="contact-info" style="margin-bottom:var(--sp-10);">
+            <div class="contact-info-item">
+              <span class="contact-info-item__label">Adresse</span>
+              <p class="contact-info-item__value">
+                {contact.street}<br />
+                {contact.zip} {contact.city}
+              </p>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-item__label">Telefon</span>
+              <p class="contact-info-item__value">
+                <a href={`tel:${contact.phonePlain}`}>{contact.phone}</a>
+              </p>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-item__label">E-Mail</span>
+              <p class="contact-info-item__value">
+                <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              </p>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-item__label">Öffnungszeiten</span>
+              <div class="contact-info-item__value">
+                {contact.hours.map((h) => (
+                  <p style="margin-bottom:var(--sp-2);">
+                    <strong>{h.days}:</strong><br />
+                    {h.time}
+                  </p>
+                ))}
+                <p style="margin-top:var(--sp-3);color:var(--clr-text-muted);font-size:var(--text-sm);">
+                  Außerhalb der Öffnungszeiten auch Termine nach Vereinbarung möglich.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kontaktformular -->
+          <h2 style="font-size:clamp(1.25rem,2.5vw,1.75rem);margin-bottom:var(--sp-6);">Schreiben Sie uns</h2>
+
+          <!-- HINWEIS: Für Cloudflare Pages → Formspree oder Workers verwenden
+               Für Netlify → data-netlify="true" und name-Attribut setzen -->
+          <form
+            action="https://formspree.io/f/xvzlqekd"
+            method="POST"
+            id="kontakt-form"
+          >
+            <div class="grid-2" style="gap:var(--sp-4);">
+              <div class="form-group">
+                <label class="form-label" for="vorname">Vorname</label>
+                <input class="form-input" type="text" id="vorname" name="vorname" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="nachname">Nachname</label>
+                <input class="form-input" type="text" id="nachname" name="nachname" required autocomplete="family-name" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">E-Mail-Adresse</label>
+              <input class="form-input" type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="telefon">Telefon (optional)</label>
+              <input class="form-input" type="tel" id="telefon" name="telefon" autocomplete="tel" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="betreff">Ihr Anliegen</label>
+              <select class="form-input form-select" id="betreff" name="betreff">
+                <option value="">Bitte wählen …</option>
+                <option value="Gardinen">Gardinen & Vorhänge</option>
+                <option value="Bodenbeläge">Bodenbeläge</option>
+                <option value="Sonnenschutz">Sonnenschutz</option>
+                <option value="Insektenschutz">Insektenschutz</option>
+                <option value="Sonstiges">Sonstiges</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="nachricht">Nachricht</label>
+              <textarea class="form-input form-textarea" id="nachricht" name="nachricht" required placeholder="Beschreiben Sie kurz Ihr Anliegen …"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label style="display:flex;align-items:flex-start;gap:var(--sp-3);cursor:pointer;">
+                <input type="checkbox" name="datenschutz" required style="margin-top:3px;flex-shrink:0;accent-color:var(--clr-accent);" />
+                <span style="font-size:var(--text-sm);color:var(--clr-text-secondary);">
+                  Ich habe die <a href="/datenschutz/" style="color:var(--clr-accent);">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn--primary">
+              Nachricht senden
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Karte & Anfahrt -->
+        <div>
+          <!-- Datenschutzfreundliche Karte: statisches Bild mit Link -->
+          <div style="background:var(--clr-bg-alt);border:1px solid var(--clr-border);border-radius:var(--radius-md);overflow:hidden;margin-bottom:var(--sp-6);">
+            <div style="aspect-ratio:4/3;background:var(--clr-bg-alt);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--sp-4);">
+              <!-- TODO: Statisches Kartenbild ablegen als /images/karte-michelfeld.jpg -->
+              <svg width="48" height="48" fill="none" stroke="var(--clr-accent)" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <p style="font-size:var(--text-sm);color:var(--clr-text-muted);text-align:center;">
+                {contact.street}<br />{contact.zip} {contact.city}
+              </p>
+              <a
+                href={contact.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--secondary"
+                style="font-size:var(--text-sm);padding:0.6rem 1.2rem;"
+              >
+                In Google Maps öffnen
+              </a>
+            </div>
+          </div>
+
+          <!-- Anfahrt -->
+          <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--radius-md);padding:var(--sp-6);">
+            <h2 style="font-size:var(--text-xl);margin-bottom:var(--sp-4);">Anfahrt</h2>
+            <p style="color:var(--clr-text-secondary);font-size:var(--text-sm);line-height:1.75;margin-bottom:var(--sp-4);">
+              Unser Showroom befindet sich in der Stuttgarter Straße 2 in Michelfeld –
+              direkt an der Durchgangsstraße, gut erreichbar aus Schwäbisch Hall,
+              Mainhardt und Untermünkheim.
+            </p>
+            <p style="color:var(--clr-text-secondary);font-size:var(--text-sm);line-height:1.75;">
+              <strong>Mit dem Auto:</strong> Ausreichend Parkplätze direkt vor dem Haus.<br />
+              <strong>Mit dem Bus:</strong> Haltestelle Michelfeld in der Nähe.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</PageLayout>

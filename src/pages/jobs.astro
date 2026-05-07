@@ -1,0 +1,111 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Breadcrumb from '../components/ui/Breadcrumb.astro';
+import ContactStrip from '../components/sections/ContactStrip.astro';
+import { contact } from '../data/contact';
+---
+
+<PageLayout
+  title="Stellenangebote – Bodenleger (m/w/d) gesucht | Lenz Wohntex Michelfeld"
+  description="Lenz Wohntex in Michelfeld sucht Verstärkung: Bodenleger (m/w/d) mit Erfahrung im Verlegen von Parkett, Vinyl und Laminat. Jetzt bewerben."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: 'Startseite', href: '/' },
+        { label: 'Stellenangebote' },
+      ]} />
+      <span class="page-hero__eyebrow">Wir suchen Verstärkung</span>
+      <h1 class="page-hero__title">Stellenangebote</h1>
+      <p class="page-hero__lead">
+        Sie arbeiten gerne mit Ihren Händen, legen Wert auf saubere Arbeit und
+        schätzen einen Betrieb, in dem man sich kennt? Dann sollten wir reden.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container container--narrow">
+
+      <!-- Stellenanzeige -->
+      <div class="job-card">
+        <div class="job-card__header">
+          <div>
+            <h2 style="font-size:clamp(1.25rem,3vw,1.75rem);margin-bottom:var(--sp-2);">
+              Bodenleger (m/w/d)
+            </h2>
+            <div class="job-card__meta">
+              <span class="job-badge">Festanstellung</span>
+              <span class="job-badge">Vollzeit</span>
+              <span class="job-badge">Michelfeld</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="job-section">
+          <h3>Was Sie mitbringen</h3>
+          <ul class="job-list">
+            <li>Abgeschlossene Ausbildung als Bodenleger, Raumausstatter oder vergleichbare Qualifikation</li>
+            <li>Erfahrung im Verlegen von Parkett, Vinyl und Laminat</li>
+            <li>Sorgfältige, selbstständige Arbeitsweise</li>
+            <li>Freude am handwerklichen Arbeiten und am Umgang mit Kunden</li>
+            <li>Führerschein Klasse B</li>
+          </ul>
+        </div>
+
+        <div class="job-section">
+          <h3>Ihre Aufgaben</h3>
+          <ul class="job-list">
+            <li>Verlegung von Parkett, Vinyl, Laminat, Teppich und Kork</li>
+            <li>Untergrundvorbereitung und Ausgleichsarbeiten</li>
+            <li>Montage von Sockelleisten und Profilen</li>
+            <li>Aufmaß und Vorbereitung bei Kundenterminen</li>
+          </ul>
+        </div>
+
+        <div class="job-section">
+          <h3>Was wir bieten</h3>
+          <ul class="job-list">
+            <li>Festes Arbeitsverhältnis in einem eingespielten Team</li>
+            <li>Abwechslungsreiche Projekte in der Region Schwäbisch Hall</li>
+            <li>Kurze Wege und direkte Kommunikation – kein Großbetrieb</li>
+            <li>Leistungsgerechte Vergütung</li>
+            <li>Firmenfahrzeug für Außeneinsätze</li>
+          </ul>
+        </div>
+
+        <div style="padding-top:var(--sp-6);border-top:1px solid var(--clr-border);">
+          <p style="color:var(--clr-text-secondary);margin-bottom:var(--sp-4);font-size:var(--text-sm);">
+            Schicken Sie uns Ihre Bewerbung – formlos per E-Mail oder rufen Sie einfach an.
+          </p>
+          <div style="display:flex;gap:var(--sp-4);flex-wrap:wrap;">
+            <a href={`tel:${contact.phonePlain}`} class="btn btn--primary">
+              Jetzt anrufen
+            </a>
+            <a href={`mailto:${contact.email}?subject=Bewerbung%20Bodenleger`} class="btn btn--secondary">
+              Per E-Mail bewerben
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Initiativbewerbung -->
+      <div style="margin-top:var(--sp-8);padding:var(--sp-6);background:var(--clr-bg-alt);border-radius:var(--radius-md);border:1px solid var(--clr-border);">
+        <h2 style="font-size:var(--text-xl);margin-bottom:var(--sp-3);">
+          Kein passendes Angebot dabei?
+        </h2>
+        <p style="color:var(--clr-text-secondary);font-size:var(--text-sm);line-height:1.7;margin-bottom:var(--sp-4);">
+          Auch wenn gerade keine Stelle ausgeschrieben ist – wir freuen uns über
+          Initiativbewerbungen von Raumausstattern, Bodenlegern und Montagehelfer/innen.
+          Einfach melden.
+        </p>
+        <a href={`mailto:${contact.email}?subject=Initiativbewerbung`} class="btn btn--outline-accent">
+          Initiativ bewerben
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <ContactStrip />
+</PageLayout>

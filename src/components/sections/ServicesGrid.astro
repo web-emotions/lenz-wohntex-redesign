@@ -1,0 +1,47 @@
+---
+import { services } from '../../data/services';
+---
+
+<section class="services-tiles">
+  <div class="container">
+    <span class="section__label reveal">Unsere Leistungen</span>
+    <h2 class="section__title reveal">Alles aus einer Hand</h2>
+    <p class="section__lead reveal">
+      Von der ersten Beratung über das Aufmaß bis zur fertigen Montage –
+      wir begleiten Ihr Projekt von Anfang bis Ende.
+    </p>
+
+    <div class="tiles-grid">
+      {services.map((service, i) => (
+        <article class="tile reveal" style={`transition-delay:${i * 80}ms`}>
+          <a href={service.href} class="tile__inner">
+            <div class="tile__image">
+              <img
+                src={service.image}
+                alt={service.imageAlt}
+                loading={i < 2 ? 'eager' : 'lazy'}
+                width="600"
+                height="450"
+              />
+            </div>
+            <div class="tile__body">
+              <h3 class="tile__title">{service.title}</h3>
+              <p class="tile__desc">{service.description}</p>
+              <div class="tile__tags">
+                {service.keywords.slice(0, 3).map(k => (
+                  <span class="tag">{k}</span>
+                ))}
+              </div>
+              <span class="tile__cta">
+                Mehr erfahren
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

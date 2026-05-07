@@ -1,0 +1,134 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
+import ContactStrip from '../../components/sections/ContactStrip.astro';
+---
+
+<PageLayout
+  title="Insektenschutz nach Maß Schwäbisch Hall – Fliegengitter & Türen | Lenz Wohntex"
+  description="Fliegengitter, Spannrahmen und Insektenschutztüren nach Maß – Beratung und Montage in Michelfeld und der Region Schwäbisch Hall. Qualität von Neher Insektenschutz."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: 'Startseite', href: '/' },
+        { label: 'Leistungen', href: '/leistungen/' },
+        { label: 'Insektenschutz' },
+      ]} />
+      <span class="page-hero__eyebrow">Leistungen</span>
+      <h1 class="page-hero__title">Insektenschutz nach Maß</h1>
+      <p class="page-hero__lead">
+        Frische Luft im Sommer – ohne Mücken, Fliegen und andere Insekten.
+        Wir messen auf und montieren maßgefertigte Insektenschutzsysteme für Fenster,
+        Türen und Kellerräume in Schwäbisch Hall und Umgebung.
+      </p>
+    </div>
+  </div>
+
+  <!-- Fensterlösungen -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label">Für Fenster</span>
+      <h2 class="section__title">Schutz am Fenster</h2>
+      <p class="section__lead">
+        Ob mit oder ohne Bohren – wir haben die passende Lösung für jedes Fenster,
+        jeden Rahmen und jede Einbausituation.
+      </p>
+
+      <div class="grid-features">
+        {[
+          {
+            title: 'Spannrahmen',
+            text: 'Der Spannrahmen wird ohne Bohren oder Kleben in den Fensterrahmen eingespannt – ideal für Mietwohnungen oder wenn kein Eingriff am Rahmen erlaubt ist. Schnell zu montieren und leicht abzunehmen zum Reinigen.',
+            tags: ['Ohne Bohren', 'Mietwohnung', 'Abnehmbar'],
+          },
+          {
+            title: 'Klemmrahmen & Aufsteckrahmen',
+            text: 'Diese Systeme klemmen sich an den bestehenden Fensterflügel oder werden auf den Blendrahmen aufgesteckt. Besonders präziser Sitz und hohe Stabilität ohne Bohrungen im Mauerwerk.',
+            tags: ['Stabil', 'Kein Mauerwerk', 'Präzise'],
+          },
+          {
+            title: 'Aufsatzrollo',
+            text: 'Das Insektenschutz-Rollo fährt bei Bedarf herunter und lässt sich platzsparend verstauen wenn nicht gebraucht. Besonders geeignet für Fenster, an denen man flexibel sein möchte.',
+            tags: ['Platzsparend', 'Flexibel', 'Rollo'],
+          },
+          {
+            title: 'Integrierte Systeme',
+            text: 'Für Neubauten und Renovierungen: Insektenschutz direkt in den Rollladenkasten integriert oder als kombiniertes System mit Sichtschutz. Kein zusätzlicher Montagerahmen sichtbar.',
+            tags: ['Rollladenkasten', 'Neubau', 'Unsichtbar'],
+          },
+        ].map((item) => (
+          <div class="feature-item">
+            <h3 class="feature-item__title">{item.title}</h3>
+            <p class="feature-item__text">{item.text}</p>
+            <div class="feature-item__tags">
+              {item.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Türlösungen -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="section__label">Für Türen & Keller</span>
+      <h2 class="section__title">Freie Durchgänge – ohne Insekten</h2>
+
+      <div class="grid-features">
+        {[
+          {
+            title: 'Pendeltür',
+            text: 'Die Insektenschutz-Pendeltür schwingt in beide Richtungen und schließt automatisch durch eine Federmechanik. Robust, langlebig und ideal für häufig genutzte Durchgänge – z. B. zur Terrasse oder im Hobbyraum.',
+            tags: ['Automatisch schließend', 'Beidseitig', 'Strapazierbar'],
+          },
+          {
+            title: 'Alu-Rahmentür (Drehtür)',
+            text: 'Eine klassische Drehtür mit Aluminium-Rahmen und feingewebtem Fliegengitter. Präzise Passform dank Aufmaß, sauberer Abschluss durch Magnetdichtung. Auch als Doppeltür für breitere Öffnungen.',
+            tags: ['Alu-Rahmen', 'Magnetdichtung', 'Doppeltür'],
+          },
+          {
+            title: 'Schieberahmen für Türen',
+            text: 'Platzsparende Lösung für Terrassentüren: Der Rahmen mit Fliegengitter lässt sich seitlich aufschieben und nimmt kaum Platz weg. Ideal, wenn eine Drehtür in der Raumsituation nicht möglich ist.',
+            tags: ['Schieben', 'Platzsparend', 'Terrassentür'],
+          },
+          {
+            title: 'Edelstahlgitter für Keller',
+            text: 'Für Kellerfenster und -öffnungen bieten wir stabile Edelstahlgitter an – sie schützen nicht nur vor Insekten, sondern auch vor unerwünschtem Zutritt und sind witterungsbeständig.',
+            tags: ['Edelstahl', 'Keller', 'Stabil', 'Witterungsbeständig'],
+          },
+        ].map((item) => (
+          <div class="feature-item">
+            <h3 class="feature-item__title">{item.title}</h3>
+            <p class="feature-item__text">{item.text}</p>
+            <div class="feature-item__tags">
+              {item.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Neher Marke -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div style="background:var(--clr-bg-alt);border:1px solid var(--clr-border);border-radius:var(--radius-md);padding:var(--sp-8);">
+        <span class="section__label">Unser Partner</span>
+        <h2 style="font-size:clamp(1.25rem,2.5vw,1.75rem);margin-bottom:var(--sp-4);">Neher – Qualität beim Insektenschutz</h2>
+        <p style="color:var(--clr-text-secondary);line-height:1.75;margin-bottom:var(--sp-4);">
+          Wir arbeiten mit Neher Insektenschutz – einem der führenden Hersteller
+          für Insektenschutzsysteme in Europa. Alle Neher-Systeme werden präzise nach Maß
+          gefertigt und zeichnen sich durch hochwertige Materialien und exakte Passformen aus.
+        </p>
+        <p style="color:var(--clr-text-secondary);line-height:1.75;">
+          Egal ob Spannrahmen, Rollo, Pendeltür oder Kellergitter – wir messen auf,
+          bestellen direkt beim Hersteller und montieren fachgerecht.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ContactStrip />
+</PageLayout>

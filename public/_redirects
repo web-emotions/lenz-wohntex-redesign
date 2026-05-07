@@ -1,0 +1,14 @@
+# 301-Redirects: Alte .html-URLs → Neue Clean-URLs
+# Schützt SEO-Rankings der bestehenden Seite
+
+/layouts1.html                    /kontakt/                      301
+/blog.html                        /impressum/                    301
+/leistungen.html                  /leistungen/                   301
+/partner.html                     /partner/                      301
+/jobs.html                        /jobs/                         301
+/referenzen.html                  /referenzen/                   301
+/datenschutz.html                 /datenschutz/                  301
+/leistungen/gardinen.html         /leistungen/gardinen/          301
+/leistungen/bodenbelaege.html     /leistungen/bodenbelaege/      301
+/leistungen/insektenschutz.html   /leistungen/insektenschutz/    301
+/leistungen/sonnenschutz.html     /leistungen/sonnenschutz/      301

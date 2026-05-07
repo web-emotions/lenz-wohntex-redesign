@@ -1,0 +1,38 @@
+export const services = [
+  {
+    id: 'gardinen',
+    title: 'Gardinen & Vorhänge',
+    description: 'Stores, Dekoschals und Vorhänge nach Maß – in unserem Showroom finden Sie Gardinenmuster in allen Variationen.',
+    href: '/leistungen/gardinen/',
+    image: '/images/Leistungen/gardinen.jpg',
+    imageAlt: 'Gardinen und Vorhänge nach Maß bei Lenz Wohntex',
+    keywords: ['Stores', 'Dekoschals', 'Vorhänge nach Maß', 'Baumwolle', 'Leinen'],
+  },
+  {
+    id: 'bodenbelaege',
+    title: 'Bodenbeläge',
+    description: 'Parkett, Vinyl, Laminat, Teppich und Kork – breite Musterauswahl, fachgerechte Verlegung durch unser Team.',
+    href: '/leistungen/bodenbelaege/',
+    image: '/images/Leistungen/Bodenbelaege.jpg',
+    imageAlt: 'Bodenbeläge – Parkett, Vinyl und Laminat bei Lenz Wohntex',
+    keywords: ['Parkett', 'Vinyl', 'Laminat', 'Teppichboden', 'Kork'],
+  },
+  {
+    id: 'sonnenschutz',
+    title: 'Sonnenschutz',
+    description: 'Plissees, Rollos und Markisen – innen und außen. Wir beraten, messen auf und montieren in der Region Schwäbisch Hall.',
+    href: '/leistungen/sonnenschutz/',
+    image: '/images/Leistungen/Sonnenschutz.jpg',
+    imageAlt: 'Sonnenschutz – Markisen und Plissees bei Lenz Wohntex',
+    keywords: ['Plissee', 'Markisen', 'Rollos', 'Jalousien', 'Faltstore'],
+  },
+  {
+    id: 'insektenschutz',
+    title: 'Insektenschutz',
+    description: 'Fliegengitter, Spannrahmen und Insektenschutztüren nach Maß – für Fenster, Türen und Kellerräume.',
+    href: '/leistungen/insektenschutz/',
+    image: '/images/Leistungen/Insektenschutz.jpg',
+    imageAlt: 'Insektenschutz für Fenster und Türen nach Maß',
+    keywords: ['Fliegengitter', 'Spannrahmen', 'Pendeltür', 'ohne Bohren', 'Neher'],
+  },
+] as const;

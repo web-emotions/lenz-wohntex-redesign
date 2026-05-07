@@ -1,0 +1,30 @@
+---
+import { contact } from '../../data/contact';
+---
+
+<section class="cta-premium">
+  <div class="container">
+    <div class="cta-premium__inner">
+      <div class="cta-premium__left reveal">
+        <span class="section__label">Beratung & Planung</span>
+        <h2 class="cta-premium__headline">
+          Bereit für Ihr<br /><em>Wohnprojekt?</em>
+        </h2>
+        <p class="cta-premium__sub">
+          Wir kommen zu Ihnen nach Hause – kostenlos, unverbindlich und persönlich.
+        </p>
+      </div>
+      <div class="cta-premium__right reveal" style="transition-delay:160ms">
+        <a href={`tel:${contact.phonePlain}`} class="cta-premium__phone">
+          {contact.phone}
+        </a>
+        <p class="cta-premium__address">
+          {contact.street} · {contact.zip} {contact.city}
+        </p>
+        <a href="/kontakt/" class="btn btn--primary" style="margin-top:1.75rem">
+          Kontaktformular öffnen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

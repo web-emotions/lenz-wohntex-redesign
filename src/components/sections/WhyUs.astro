@@ -1,0 +1,41 @@
+---
+const reasons = [
+  {
+    number: '01',
+    title: 'Persönliche Beratung',
+    text: 'Wir kommen zu Ihnen nach Hause, schauen uns die Räume an und beraten Sie ohne Zeitdruck. Kein anonymer Onlinehandel – sondern echte Handwerker mit Erfahrung.',
+  },
+  {
+    number: '02',
+    title: 'Showroom in Michelfeld',
+    text: 'In unserem Ausstellungsraum können Sie Gardinen, Böden und Sonnenschutz-Systeme sehen, anfassen und vergleichen – mit echter Musterwand und Insektenschutzturm.',
+  },
+  {
+    number: '03',
+    title: 'Aufmaß & Montage',
+    text: 'Wir messen auf, bestellen, verlegen und montieren – alles aus einer Hand. Sauber, termingerecht und mit dem richtigen Werkzeug für dauerhaft gute Ergebnisse.',
+  },
+  {
+    number: '04',
+    title: 'Seit 1985 in der Region',
+    text: 'Über 35 Jahre Erfahrung in Schwäbisch Hall, Michelfeld, Mainhardt und Umgebung. Viele unserer Kunden vertrauen uns seit Jahrzehnten – das ist unser bestes Zeugnis.',
+  },
+];
+---
+
+<section class="why-light section section--alt">
+  <div class="container">
+    <span class="section__label reveal">Warum Lenz Wohntex</span>
+    <h2 class="section__title reveal">Raumgestaltung, die man spürt</h2>
+
+    <div class="why-light__grid">
+      {reasons.map((r, i) => (
+        <div class="why-light__item reveal" style={`transition-delay:${i * 90}ms`}>
+          <span class="why-light__num" aria-hidden="true">{r.number}</span>
+          <h3 class="why-light__name">{r.title}</h3>
+          <p class="why-light__text">{r.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

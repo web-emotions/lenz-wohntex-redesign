@@ -1,0 +1,114 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
+import ContactStrip from '../../components/sections/ContactStrip.astro';
+---
+
+<PageLayout
+  title="Sonnenschutz Schwäbisch Hall – Markisen, Plissees & Rollos | Lenz Wohntex"
+  description="Markisen, Plissees und Rollos nach Maß – Lenz Wohntex in Michelfeld berät und montiert. Innen- und Außensonnenschutz für die Region Schwäbisch Hall."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: 'Startseite', href: '/' },
+        { label: 'Leistungen', href: '/leistungen/' },
+        { label: 'Sonnenschutz' },
+      ]} />
+      <span class="page-hero__eyebrow">Leistungen</span>
+      <h1 class="page-hero__title">Sonnenschutz</h1>
+      <p class="page-hero__lead">
+        Sonnenlicht ist wertvoll – zu viel davon macht Räume heiß und blendet.
+        Wir beraten Sie zu allen Möglichkeiten des innenliegenden und außenliegenden
+        Sonnenschutzes und übernehmen Aufmaß und Montage.
+      </p>
+    </div>
+  </div>
+
+  <!-- Innenliegend -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label">Innenliegender Sonnenschutz</span>
+      <h2 class="section__title">Schutz für innen</h2>
+      <p class="section__lead">
+        Innenliegende Systeme lassen sich einfach nachrüsten – ohne Bohrungen von außen
+        und ideal für Mietwohnungen oder bestehende Gebäude.
+      </p>
+
+      <div class="grid-features">
+        {[
+          {
+            title: 'Plissees',
+            text: 'Plissees funktionieren wie ein Fächer: der Stoff legt sich in gleichmäßige Falten zusammen. Sie lassen sich von oben und unten verschieben – besonders praktisch für Dachfenster, Schrägverglasungen und Wintergärten. Auch in Verdunkelungsausführung erhältlich.',
+            tags: ['Dachfenster', 'Oben & unten', 'Verdunkelung'],
+          },
+          {
+            title: 'Rollos',
+            text: 'Rollos sind die einfachste und platzsparendste Lösung. Lichtfilternde und abdunkelnde Stoffe, viele Farben und Muster – für jeden Raum die passende Variante. Auf Wunsch auch mit Kassette für ein aufgeräumtes Erscheinungsbild.',
+            tags: ['Platzsparend', 'Lichtfilternd', 'Abdunkelnd', 'Kassette'],
+          },
+          {
+            title: 'Jalousien',
+            text: 'Horizontallamellen aus Aluminium oder Holz ermöglichen eine stufenlose Lichtlenkung: Sie bestimmen selbst, wie viel Licht herein- oder ausgesperrt wird, und können das Licht gezielt nach oben an die Decke lenken.',
+            tags: ['Lichtlenkung', 'Alu & Holz', 'Stufenlos'],
+          },
+          {
+            title: 'Lamellenanlagen',
+            text: 'Vertikale Lamellenanlagen sind besonders für große Fensterflächen und Terrassentüren geeignet. Die breiten Lamellen lassen sich drehen und zur Seite schieben – für stufenlosen Sichtschutz bei gleichzeitigem Lichteinfall.',
+            tags: ['Terrassentür', 'Große Flächen', 'Schiebbar'],
+          },
+        ].map((item) => (
+          <div class="feature-item">
+            <h3 class="feature-item__title">{item.title}</h3>
+            <p class="feature-item__text">{item.text}</p>
+            <div class="feature-item__tags">
+              {item.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Außenliegend -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="section__label">Außenliegender Sonnenschutz</span>
+      <h2 class="section__title">Effektiver Hitzeschutz von außen</h2>
+      <p class="section__lead">
+        Außenliegender Sonnenschutz ist wesentlich effektiver als innen: Die Wärme
+        wird abgefangen, bevor sie durch die Verglasung in den Raum gelangt.
+      </p>
+
+      <div class="grid-features">
+        {[
+          {
+            title: 'Gelenkarmmarkise',
+            text: 'Die Gelenkarmmarkise ist der Klassiker für Terrassen und Balkone. Die seitlichen Gelenkarme spannen das Tuch ohne seitliche Führungsschienen aus. Erhältlich manuell oder mit Motorantrieb, auf Wunsch mit Windsensor.',
+            tags: ['Terrasse', 'Balkon', 'Motorantrieb', 'Windsensor'],
+          },
+          {
+            title: 'Kassettenmarkise',
+            text: 'Bei der Kassettenmarkise ist das Tuch vollständig in einem Gehäuse versenkt – geschützt vor Schmutz und UV-Strahlung wenn eingezogen. Optimale Lösung für repräsentative Eingangs- und Terrassenbereiche.',
+            tags: ['Vollständig geschützt', 'Witterungsbeständig'],
+          },
+          {
+            title: 'Faltstore',
+            text: 'Faltstoredachmarkisen sind ideal für Wintergärten und große Glasdächer. Der Stoff wird in Falten zusammengerafft und bietet auch bei steilen Winkeln zuverlässigen Schutz vor Sonne und Hitze.',
+            tags: ['Wintergarten', 'Glasdach', 'Schrägstellung'],
+          },
+        ].map((item) => (
+          <div class="feature-item">
+            <h3 class="feature-item__title">{item.title}</h3>
+            <p class="feature-item__text">{item.text}</p>
+            <div class="feature-item__tags">
+              {item.tags.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactStrip />
+</PageLayout>

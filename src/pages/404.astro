@@ -1,0 +1,22 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ContactStrip from '../components/sections/ContactStrip.astro';
+---
+
+<PageLayout
+  title="Seite nicht gefunden | Lenz Wohntex"
+  description="Diese Seite existiert nicht. Zurück zur Startseite von Lenz Wohntex."
+  noindex={true}
+>
+  <section style="padding-block:clamp(4rem,12vw,8rem);text-align:center;">
+    <div class="container">
+      <p style="font-family:var(--font-serif);font-size:var(--text-6xl);font-weight:700;color:var(--clr-border-strong);line-height:1;margin-bottom:var(--sp-6);">404</p>
+      <h1 style="font-size:clamp(1.5rem,4vw,2.5rem);margin-bottom:var(--sp-4);">Diese Seite wurde nicht gefunden</h1>
+      <p style="color:var(--clr-text-secondary);margin-bottom:var(--sp-8);margin-inline:auto;">
+        Die gesuchte Seite existiert nicht oder wurde verschoben. Zurück zur Startseite?
+      </p>
+      <a href="/" class="btn btn--primary">Zur Startseite</a>
+    </div>
+  </section>
+  <ContactStrip />
+</PageLayout>

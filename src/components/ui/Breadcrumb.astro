@@ -1,0 +1,37 @@
+---
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.label,
+    ...(c.href ? { item: new URL(c.href, 'https://www.lenz-wohntex.de').href } : {}),
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  {crumbs.map((crumb, i) => (
+    <>
+      {i > 0 && <span class="breadcrumb__sep" aria-hidden="true">›</span>}
+      {crumb.href
+        ? <a href={crumb.href}>{crumb.label}</a>
+        : <span aria-current="page">{crumb.label}</span>
+      }
+    </>
+  ))}
+</nav>

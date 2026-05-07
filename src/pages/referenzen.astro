@@ -1,0 +1,85 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Breadcrumb from '../components/ui/Breadcrumb.astro';
+import ContactStrip from '../components/sections/ContactStrip.astro';
+
+// Bildpfade für die Galerien
+// TODO: Echte Bilder von der alten Seite herunterladen und in /public/images/referenzen/ ablegen
+const bodenBilder = Array.from({ length: 20 }, (_, i) => ({
+  src: `/images/referenzen/boden-${String(i + 1).padStart(2, '0')}.jpg`,
+  alt: `Referenz Bodenbelag Projekt ${i + 1} – Lenz Wohntex Michelfeld`,
+}));
+
+const gardinenBilder = Array.from({ length: 2 }, (_, i) => ({
+  src: `/images/referenzen/gardinen-${String(i + 1).padStart(2, '0')}.jpg`,
+  alt: `Referenz Gardinen Projekt ${i + 1} – Lenz Wohntex Michelfeld`,
+}));
+---
+
+<PageLayout
+  title="Referenzen – Unsere Projekte in der Region | Lenz Wohntex Michelfeld"
+  description="Einblicke in realisierte Projekte: Bodenbeläge, Gardinen, Sonnenschutz und Insektenschutz – Referenzfotos aus der Region Schwäbisch Hall."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: 'Startseite', href: '/' },
+        { label: 'Referenzen' },
+      ]} />
+      <span class="page-hero__eyebrow">Einblicke in unsere Arbeit</span>
+      <h1 class="page-hero__title">Referenzprojekte</h1>
+      <p class="page-hero__lead">
+        Ein Ausschnitt aus abgeschlossenen Projekten in der Region Schwäbisch Hall –
+        von neuen Bodenbelägen über Gardinen bis hin zu kompletten Raumgestaltungen.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bodenbeläge Galerie -->
+  <section class="section">
+    <div class="container">
+      <span class="section__label">Referenzen</span>
+      <h2 class="section__title mb-8">Bodenbeläge</h2>
+      <div class="gallery-grid">
+        {bodenBilder.map((bild) => (
+          <div class="gallery-item">
+            <img
+              src={bild.src}
+              alt={bild.alt}
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Gardinen Galerie -->
+  <section class="section section--alt">
+    <div class="container">
+      <span class="section__label">Referenzen</span>
+      <h2 class="section__title mb-8">Gardinen & Vorhänge</h2>
+      <div class="gallery-grid">
+        {gardinenBilder.map((bild) => (
+          <div class="gallery-item">
+            <img
+              src={bild.src}
+              alt={bild.alt}
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+          </div>
+        ))}
+      </div>
+
+      <p style="margin-top:var(--sp-8);color:var(--clr-text-muted);font-size:var(--text-sm);">
+        Weitere Projekte zeigen wir Ihnen gerne persönlich in unserem Showroom.
+      </p>
+    </div>
+  </section>
+
+  <ContactStrip />
+</PageLayout>

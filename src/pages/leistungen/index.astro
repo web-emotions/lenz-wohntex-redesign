@@ -1,0 +1,102 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
+import ContactStrip from '../../components/sections/ContactStrip.astro';
+import { services } from '../../data/services';
+---
+
+<PageLayout
+  title="Leistungen – Raumgestaltung aus einer Hand | Lenz Wohntex Michelfeld"
+  description="Gardinen, Bodenbeläge, Sonnenschutz und Insektenschutz – Lenz Wohntex in Michelfeld berät Sie persönlich, misst auf und montiert. Mit eigenem Showroom seit 1985."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumb crumbs={[
+        { label: 'Startseite', href: '/' },
+        { label: 'Leistungen' },
+      ]} />
+      <span class="page-hero__eyebrow">Was wir für Sie tun</span>
+      <h1 class="page-hero__title">Unsere Leistungen</h1>
+      <p class="page-hero__lead">
+        In unserem Showroom in Michelfeld können Sie alle Materialien sehen und anfassen –
+        Gardinenmuster, Bodenbeläge, Sonnenschutz-Systeme und Insektenschutz.
+        Wir kommen auch zu Ihnen nach Hause, messen auf und übernehmen die Montage.
+      </p>
+    </div>
+  </div>
+
+  <!-- Leistungen Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-services">
+        {services.map((service) => (
+          <article class="service-card">
+            <div class="service-card__image">
+              <img
+                src={service.image}
+                alt={service.imageAlt}
+                loading="lazy"
+                width="400"
+                height="300"
+              />
+            </div>
+            <div class="service-card__body">
+              <h2 class="service-card__title">{service.title}</h2>
+              <p class="service-card__text">{service.description}</p>
+              <a href={service.href} class="service-card__link">
+                Details ansehen
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Showroom & Service -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <span class="section__label">Ausstellung</span>
+          <h2 class="section__title" style="font-size:clamp(1.5rem,3vw,2rem);">Beratung in unserem Showroom</h2>
+          <p style="color:var(--clr-text-secondary);margin-bottom:var(--sp-4);line-height:1.75;">
+            In Michelfeld erwarten Sie Gardinenmuster in allen Variationen, eine große
+            Musterwand mit Parkett, Vinyl und Laminat, Korkböden, Teppichböden sowie
+            ein Insektenschutzturm mit allen gängigen Systemen und eine Auswahl an
+            Sonnenschutz-Lösungen.
+          </p>
+          <p style="color:var(--clr-text-secondary);line-height:1.75;">
+            Nehmen Sie sich Zeit – wir beraten Sie ohne Druck und helfen Ihnen,
+            die passende Lösung für Ihre Räume zu finden.
+          </p>
+        </div>
+        <div>
+          <span class="section__label">Außendienst</span>
+          <h2 class="section__title" style="font-size:clamp(1.5rem,3vw,2rem);">Wir kommen zu Ihnen</h2>
+          <ul style="display:flex;flex-direction:column;gap:var(--sp-3);margin-top:var(--sp-4);">
+            {[
+              'Beratung bei Ihnen zu Hause',
+              'Aufmaß aller Fenster und Räume',
+              'Fachgerechte Verlegung aller Bodenbeläge',
+              'Montage aller Gardinen, Rollos und Sonnenschutzsysteme',
+              'Montage aller Insektenschutzlösungen',
+            ].map((item) => (
+              <li style="display:flex;align-items:flex-start;gap:var(--sp-3);color:var(--clr-text-secondary);font-size:var(--text-sm);">
+                <svg width="16" height="16" fill="none" stroke="var(--clr-accent)" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0;margin-top:0.2em;">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactStrip />
+</PageLayout>

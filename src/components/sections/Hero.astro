@@ -1,0 +1,64 @@
+---
+interface Props {
+  headline: string;
+  headlineEm?: string;
+  subline: string;
+  ctaPrimary: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string };
+  eyebrow?: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+const {
+  headline,
+  headlineEm,
+  subline,
+  ctaPrimary,
+  ctaSecondary,
+  eyebrow = 'Raumausstatter seit 1985',
+  image,
+  imageAlt = '',
+} = Astro.props;
+---
+
+<section class="hero">
+  {image && (
+    <div class="hero__bg">
+      <img
+        src={image}
+        alt={imageAlt}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="hero__overlay"></div>
+    </div>
+  )}
+
+  <div class="container">
+    <div class="hero__content">
+      <p class="hero__eyebrow">{eyebrow}</p>
+      <h1 class="hero__headline">
+        {headline}
+        {headlineEm && (
+          <>
+            <br />
+            <em>{headlineEm}</em>
+          </>
+        )}
+      </h1>
+      <p class="hero__subline">{subline}</p>
+      <div class="hero__actions">
+        <a href={ctaPrimary.href} class="btn btn--primary">{ctaPrimary.text}</a>
+        {ctaSecondary && (
+          <a href={ctaSecondary.href} class="btn btn--ghost">{ctaSecondary.text}</a>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll-hint" aria-hidden="true">
+    <span class="hero__scroll-line"></span>
+  </div>
+</section>
