@@ -96,6 +96,7 @@ body {
   background-color: var(--clr-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 img, video {
@@ -417,7 +418,6 @@ strong { font-weight: 600; }
   background: var(--clr-surface);
   border-bottom: 1px solid var(--clr-border);
   transition: box-shadow var(--transition);
-  overflow: hidden;
 }
 .site-header.is-scrolled { box-shadow: var(--shadow-sm); }
 
